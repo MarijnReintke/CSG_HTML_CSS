@@ -1,6 +1,13 @@
 body {
-    color: darkblue;
-    font-size: 4.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular',Geneva, Verdana, sans-serif;
-    font-variant: small-caps;
+}
+
+p {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 10px solid rgb(24, 100, 68);
+    padding: 1rem;
+    background-color: rgb(112, 160, 130);
 }
