@@ -1,17 +1,169 @@
-html, body {
+
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: #5d524c;
-    color: #c8c3bf;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    size: 14px;
-    padding-left: 10%;
+    background: #fff7e3;
+    color: #590312;
+    font-family: 'Archivo Black', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
 }
 
-#vogel {
-    width: 225px;
-    height: auto;
+h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 32px;
+    background-color:#590312;
+    color: #ffefd5;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
 }
+
+#populairegerechten {
+    display: flex;
+    margin-top: 0;
+}
+
+#headercontainer {
+    background-color: #ffefd5;
+    border-bottom: #590312 2px solid;
+}
+
+#navigatiebalk {
+    background-color: #ffefd5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: #590312 0px 10px 15px 0px;
+}
+
+#banner {
+    background-image: url('../images/Surinaamse-roti-3.jpg');
+    background-size: cover;
+    background-position: center;
+    top: 48px;
+    width: 100%;
+    height: 800px;
+}
+
+#tekstbg {
+    display:flex;
+    background-color: #fff7e3;
+    color: #590312;
+    font-size: 40px;
+    font-weight: bold;
+    bottom: 40px;
+    position: absolute;
+    left: 15%;
+    border-radius: 20px;
+    width: 800px;
+    height: 90px;
+}
+
+#tekstbg p {
+    margin-left: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#arrowbg {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 25px;
+    display: flex;
+    background-color:#590312;
+    border-radius: 99999px; 
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    /* animatie gemaakt met hulp van Copilot
+       "Maak een kleuranimatie wanneer hover over #arrowbg" */
+    transition: background-color 300ms ease;
+}
+
+#arrowbg img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+    align-content: justify;
+}
+
+#arrowbg:hover {
+    background-color: #ff6a49;
+}
+
+#navigatiebalk nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#navigatiebalk nav ul li {
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #590312;
+    border-bottom: 2px solid transparent;
+    /* animatie gemaakt met hulp van Copilot
+       "Maak een bottom border animatie voor wanneer ik over een list element hover" */
+    transition: border-color 200ms ease;
+}
+
+#navigatiebalk nav ul a {
+    text-decoration: none;
+}
+
+#navigatiebalk nav ul li:hover, #navigatiebalk nav ul li:focus {
+    color: #ff6a49;
+    border-color: currentColor;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+#logo {
+    font-size: 64px;
+    margin: 0;
+    text-align: center;
+}
+
+#logotekst {
+    font-size: 18px;
+    margin: 0;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.erica-one-regular {
+  font-family: "Erica One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.rood {
+    color: #ff4b4b;
+}
+
+.oranje {
+    color: #ff6a49;
+}
+

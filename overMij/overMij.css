@@ -1,25 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    text-align: center;
+    margin: 0;
+    margin-top: 100px;
+    padding: 0;
     color: rgb(3, 23, 134);
     font-size: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular',Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(180deg, rgb(235, 248, 255) 0%, rgb(189, 231, 255) 100%);
+   font-family: 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(180deg, rgb(194, 233, 255) 0%, rgb(129, 194, 255) 100%);
 }
 
 div.info {
-    margin: 20px;
+    display: inline-block;
+    scroll-margin-top: 80px;
+    margin: 40px;
     padding: 20px;
     border: 10px solid rgba(57, 171, 247, 0.25);
     background-color: rgba(27, 193, 235, 0.25);
     border-radius: 25px;
+    width: 60%;
+}
+
+div#Samenvatting {
+    text-align: left;
 }
 
 nav {
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #b9e9ff;
-  border-bottom: 3px solid rgba(77, 185, 248, 0.425);
+  background-color: #afdfff;
+  border-bottom: 3px solid rgba(77, 151, 248, 0.425);
   box-shadow: 0 2px 4px rgba(0, 111, 202, 0.233);
 }
 nav ul {
@@ -29,6 +51,7 @@ nav ul {
   display: flex;
 }
 nav ul li {
+  flex: 1;
   margin-right: 0px;
 }
 nav ul li a {
@@ -39,4 +62,64 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: rgb(43, 134, 196);
+  background-color: rgba(168, 213, 240, 0.425);
+}
+
+#pompoen {
+  color: rgb(218, 152, 78);
+}
+
+#maizena {
+  color: rgb(243, 220, 145);
+}
+
+img[src="Maizena-koekjes-maken.png"] {
+    margin-right: 15px;
+    object-fit: cover;
+    width: 500px;
+    height: 300px;
+    border: 5px solid rgb(211, 188, 115, 0.75);
+    border-radius: 15px;
+}
+
+img[src="shutterstock_477305299.png"] {
+    margin-left: 15px;
+    object-fit: cover;
+    width: 500px;
+    height: 300px;
+    border: 5px solid rgb(218, 152, 78, 0.75);
+    border-radius: 15px;
+}
+
+img[src="kroatiegezin.png"] {
+    object-fit: cover;
+    width: 1000px;
+    height: 500px;
+    border: 5px solid rgb(77, 185, 248, 0.75);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+img#hoverable:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+img {
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+h2 {
+    text-align: center;
+} 
+
+h1#Over-Mij {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #b9e9ff;
+    border-top: 5px solid rgba(77, 185, 248, 0.425);
+    border-bottom: 5px solid rgba(77, 185, 248, 0.425);
+    box-shadow: 0 2px 4px rgba(0, 111, 202, 0.233);
 }
