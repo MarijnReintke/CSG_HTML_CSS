@@ -31,7 +31,18 @@ h2 {
     margin-left: 50%;
 }
 
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
 #container {
+    background-image: linear-gradient(rgba(255,239,213,0.9), rgba(255,239,213,0.9)), url(../images/SuriSmaak.png);
+    background-size:contain;
+    background-position: center;
+}
+
+#content {
     background-image: linear-gradient(to bottom, #fff7e3, #ffe4c4);
     width: 1250px;
     margin: auto auto;
@@ -216,6 +227,13 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.receptencontainer a:hover .recept {
+    box-shadow: 0 6px 12px #ff6a4933;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    
 }
 
 .recept {
