@@ -57,7 +57,7 @@ footer {
     background-image: linear-gradient(to bottom, #fff7e3, #ffe4c4);
     width: 1250px;
     margin: auto auto;
-    height: 2000px;
+    height: 4020px;
     padding: 20px;
 }
 
@@ -70,7 +70,6 @@ footer {
     justify-content: center;
     padding: 2rem 0;
     padding-bottom: 1rem;
-    padding-top: 4rem;
     margin-top: 0;
 }
 
@@ -253,7 +252,6 @@ header {
 
 .recept {
     transition: all 0.3s ease;
-    transform: translateY(0);
     display: flex;
     flex-direction: column;
     width: 380px;
@@ -281,6 +279,18 @@ header {
     background-image: url(../images/Surinaamse-roti-3.jpg);
 }
 
+#bami {
+    background-image: url(../images/Bami.jpeg);
+}
+
+#loempia {
+    background-image: url(../images/Loempia.jpg);
+}
+
+#pom {
+    background-image: url(../images/Pom.jpg);
+}
+
 .receptbeschrijving {
     padding: 15px;
     text-align: left;
@@ -288,8 +298,33 @@ header {
 }
 
 .receptbeschrijving h3 {
-    font-size: 18px;
+    font-size: 17.75px;
     margin-bottom: 8px;
+}
+
+.receptbeschrijving p {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color:#590312;
+}
+
+/* Gemaakt met behulp van Copilot
+    "Bij .receptbeschrijving p voeg een klok symbool
+     links van het element toe" */
+.receptbeschrijving p::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 6px;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='none' stroke='%23fff' stroke-width='2'/><path d='M12 7v5l3 2' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='none' stroke='%23fff' stroke-width='2'/><path d='M12 7v5l3 2' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+    background-color: currentColor;
+    background-repeat: no-repeat;
+    background-position: center;
+    line-height: 1;
 }
 
 .rating {
