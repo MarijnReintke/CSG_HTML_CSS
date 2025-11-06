@@ -117,15 +117,23 @@ footer {
     height: 800px;
 }
 
+a[href="#roti"] {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
 #tekstbg {
-    display:flex;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
     background-color: #fff7e3;
     color: #590312;
     font-size: 40px;
     font-weight: bold;
-    bottom: 40px;
-    position: absolute;
+    position: relative;
     left: 15%;
+    top: 75%;
     border-radius: 20px;
     width: 800px;
     height: 90px;
@@ -160,7 +168,6 @@ footer {
     margin-right: auto;
     width: 20px;
     height: 20px;
-    align-content: justify;
 }
 
 #arrowbg:hover {
@@ -276,7 +283,7 @@ header {
 }
 
 #roti {
-    background-image: url(../images/Surinaamse-roti-3.jpg);
+    background-image: url(../images/rotikip.jpg);
 }
 
 #bami {
@@ -289,6 +296,14 @@ header {
 
 #pom {
     background-image: url(../images/Pom.jpg);
+}
+
+#pastei {
+    background-image: url(../images/Surinaamse-pastei-2.jpg)
+}
+
+#cassavesoep {
+    background-image: url(../images/Cassavesoep.png)
 }
 
 .receptbeschrijving {
