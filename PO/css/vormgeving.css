@@ -325,6 +325,18 @@ header {
     background-image: url(../images/Surinaamse-spitskool_1149194-7-0_560x560.png)
 }
 
+#heri {
+    background-image: url(../images/ons-eten-2-surinaams-creoolse-heri-heri-2-scaled-1.jpg)
+}
+
+#aardappelpom {
+    background-image: url(../images/img_RAM_PRD147719_1224x900_JPG.png)
+}
+
+#zuurgoed {
+    background-image: url(../images/Surinaams-zuurgoed-\(tafelzuur-met-komkommer-witte--en-rode_1423939-7-0_560x560.png)
+}
+
 .receptbeschrijving {
     padding: 15px;
     text-align: left;
@@ -368,9 +380,11 @@ header {
 }
 
 .weetjescontainer {
-    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
     height: auto;
-    background-image: linear-gradient(rgba(255, 181, 132, 0.5), rgba(255, 181, 132, 0.5)),
+    background-image: linear-gradient(rgba(255, 181, 132, 0.8), rgba(255, 181, 132, 0.8)),
     url(../images/SurinameseVariety-HOC2322-14-1440x600.jpg);
     background-size: cover;
     width: 100%;
@@ -383,21 +397,24 @@ header {
     background: none;
     color:#590312;
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     padding: 0;
 }
 
 .weetjescontainer p {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 20px;
+    width: 1000px;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .weetjescontainer div {
+    text-align: center;
     width: 100%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
     background-color:rgb(255, 181, 132);
-    padding: 20px 200px;
+    padding: 20px 0;
 }
