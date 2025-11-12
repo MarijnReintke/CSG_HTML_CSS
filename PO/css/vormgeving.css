@@ -317,6 +317,14 @@ header {
     background-image: url(../images/Cassavesoep.png)
 }
 
+#kippasteitjes {
+    background-image: url(../images/Surinaamse-pasteitjes-met-kip-2.png)
+}
+
+#spitskool {
+    background-image: url(../images/Surinaamse-spitskool_1149194-7-0_560x560.png)
+}
+
 .receptbeschrijving {
     padding: 15px;
     text-align: left;
@@ -360,13 +368,13 @@ header {
 }
 
 .weetjescontainer {
-    padding: 40px;
-    height: 400px;
-    background-image: linear-gradient(rgba(255,239,213,0.5), rgba(255,239,213,0.5)),
+    padding: 20px;
+    height: auto;
+    background-image: linear-gradient(rgba(255, 181, 132, 0.5), rgba(255, 181, 132, 0.5)),
     url(../images/SurinameseVariety-HOC2322-14-1440x600.jpg);
     background-size: cover;
     width: 100%;
-    text-align: center;
+    text-align:center;
 }
 
 .weetjescontainer h2 {
@@ -375,10 +383,21 @@ header {
     background: none;
     color:#590312;
     font-size: 4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding: 0;
 }
 
 .weetjescontainer p {
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+.weetjescontainer div {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(255, 181, 132);
+    padding: 20px 200px;
 }
