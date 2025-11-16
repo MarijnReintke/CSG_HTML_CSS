@@ -57,7 +57,7 @@ footer {
     margin-right: auto;
 }
 
-#content {
+.content {
     height: max-content;
     align-items: center;
     width: 1400px;
@@ -278,7 +278,7 @@ a:hover .recept {
     transform: translateY(-5px);
 }
 
-a:hover .recept .receptafbeelding {
+.recept:hover .receptafbeelding {
     filter: brightness(1.05);
     background-size: 105% auto;
 }
@@ -392,8 +392,15 @@ a:hover .recept .receptafbeelding {
 
 .rating {
     display: flex;
-    width: 75px;
+    width: 80px;
     height: fit-content;
+}
+
+.ratinggroot {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: right;
 }
 
 .weetjescontainer {
@@ -506,13 +513,12 @@ a:hover .recept .receptafbeelding {
 
 .videokaart {
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
 }
 
 .videokaart .receptafbeelding {
-    filter: brightness(0.9);
+    filter: brightness(0.75);
     transition: filter 300ms ease, background-size 300ms ease;
+    height: 100%;
 }
 
 .playbuttonbg {
@@ -524,7 +530,7 @@ a:hover .recept .receptafbeelding {
     left: 50%;
     transform: translate(-50%, -50%);
     
-    background-color:#590312;
+    background-color:#ffefd5;
     border-radius: 999px;
     
     transition: transform 300ms ease, background-color 300ms ease;
@@ -539,7 +545,7 @@ a:hover .recept .receptafbeelding {
     left: 50%;
     transform: translate(-50%, -50%);
     
-    background-color:#ffefd5;
+    background-color:#590312;
     
     -webkit-mask: url("../images/play.svg") center/60% no-repeat;
     mask: url("../images/play.svg") center/60% no-repeat;
@@ -547,17 +553,139 @@ a:hover .recept .receptafbeelding {
     transition: transform 300ms ease, background-color 300ms ease;
 }
 
-/* ----- Hover effects ----- */
 .videokaart:hover .receptafbeelding {
-    background-size: 105% auto; /* licht inzoomen */
+    filter: brightness(1)
 }
 
 .videokaart:hover .playbutton {
-    transform: translate(-50%, -50%) scale(1.1); /* groter */
-    background-color: #ff6a49; /* optional: oranje tint bij hover */
+    transform: translate(-50%, -50%) scale(1.05);
+    background-color: #ff6a49;
 }
 
 .videokaart:hover .playbuttonbg {
-    transform: translate(-50%, -50%) scale(1.1); /* groter */
-    background-color:#ffefd5; /* optional: oranje tint bij hover */
+    transform: translate(-50%, -50%) scale(1.05);
 }
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 65%;
+}
+
+#bamivideo {
+    background-image: url(../images/SurinaamseBamiVideo.png)
+}
+
+#bojovideo {
+    background-image: url(../images/bojo.jpg)
+}
+
+#maizenavideo {
+    background-image: url(../images/Maizenakoek.jpg)
+}
+
+.receptafbeeldinggroot {
+    float: right;
+    width: 680px;
+    height: 400px;
+    background-size:cover;
+}
+
+.flexcontainer {
+    height: 2000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.linkercontainer {
+    width: 310px;
+    height: 100%;
+    margin-right: 60px;
+}
+
+.rechtercontainer {
+    width: 680px;
+    height: 100%;
+}
+
+.recepttitel {
+    font-size: 2.5rem;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.info {
+    display: flex;
+    margin-top: 15px;
+    justify-content: right;
+}
+
+.gerechtsymbool {
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    color: inherit;
+    background-color: currentColor;
+    -webkit-mask: url('../images/dinner-white.svg') no-repeat center / contain;
+    mask: url('../images/dinner-white.svg') no-repeat center / contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+}
+
+.persoonsymbool {
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    color: inherit;
+    background-color: currentColor;
+    -webkit-mask: url('../images/user-white.svg') no-repeat center / contain;
+    mask: url('../images/user-white.svg') no-repeat center / contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+}
+
+.kloksymbool {
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    color: inherit;
+    background-color: currentColor;
+    -webkit-mask: url('../images/time-white.svg') no-repeat center / contain;
+    mask: url('../images/time-white.svg') no-repeat center / contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+}
+
+.ingredientenlijst {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 250px;
+    width: 100%;
+    height: 750px;
+}
+
+.ingredientenlijst h2 {
+    color:#590312;
+    background: none;
+    margin: 0;
+    padding: 0
+}
+
+.ingredientenlijst li {
+    align-items: center;
+    list-style:square;
+    height: 25px;
+}
+
+.ingredientenlijst p {
+    font-size: 18px;
+}
+
+/* https://www.fajalobi.nl/surinaamse-roti-kip-masala */
+
