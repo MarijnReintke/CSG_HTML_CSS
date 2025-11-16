@@ -173,13 +173,19 @@ a[href="#roti"] {
     transition: background-color 300ms ease;
 }
 
-#arrowbg img {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+.arrow-icon {
+    margin: auto;
     width: 20px;
     height: 20px;
+    display: inline-block;
+    background-color: #c9b7ac;
+    -webkit-mask: url("../images/Arrow.png") no-repeat center/contain;
+    mask: url("../images/Arrow.png") no-repeat center/contain;
+}
+
+#arrowbg:hover .arrow-icon {
+    transition: background-color 300ms ease;
+    background-color: #ffffff;
 }
 
 #arrowbg:hover {
@@ -210,9 +216,17 @@ a[href="#roti"] {
     text-decoration: none;
 }
 
-#navigatiebalk nav ul li:hover, #navigatiebalk nav ul li:focus {
+#navigatiebalk nav ul li:hover {
     color: #ff6a49;
+    background-color: #ffe4c0;
     border-color: currentColor;
+}
+
+#navigatiebalk nav ul li:active {
+    transition: 0ms;
+    color: #ff8e61;
+    border-color: #ffefd5;
+    background-color: inherit;
 }
 
 header {
@@ -256,14 +270,15 @@ header {
     row-gap: 40px;
     justify-content: center;
     margin-bottom: 60px;
+    margin-top: 5px;
 }
 
-.receptencontainer a:hover .recept {
+a:hover .recept {
     box-shadow: 0 6px 12px #ff6a4933;
     transform: translateY(-5px);
 }
 
-.receptencontainer a:hover .recept .receptafbeelding {
+a:hover .recept .receptafbeelding {
     filter: brightness(1.05);
     background-size: 105% auto;
 }
@@ -287,8 +302,6 @@ header {
     filter: brightness(1);
     width: 100%;
     height: 65%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
     background-position: center;
     position: relative;
 }
@@ -337,6 +350,10 @@ header {
     background-image: url(../images/Surinaams-zuurgoed-\(tafelzuur-met-komkommer-witte--en-rode_1423939-7-0_560x560.png)
 }
 
+#broodjerundvlees {
+    background-image: url(../images/broodjerundvlees.jpg);
+}
+
 .receptbeschrijving {
     padding: 15px;
     text-align: left;
@@ -380,8 +397,6 @@ header {
 }
 
 .weetjescontainer {
-    margin-left: auto;
-    margin-right: auto;
     padding: 30px 0;
     height: auto;
     background-image: linear-gradient(rgba(255, 181, 132, 0.8), rgba(255, 181, 132, 0.8)),
@@ -417,4 +432,132 @@ header {
     margin-right: auto;
     background-color:rgb(255, 181, 132);
     padding: 20px 0;
+}
+
+.weekmenucontainer {
+    padding: 0;
+    height: 475px;
+    background-size: cover;
+    width: 100%;
+    text-align:center;
+    background-color: #ffdeb8;
+}
+
+.weekmenucontainer .tussenkopjecontainer {
+    width: 1400px;
+}
+
+.scrollbar {
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+    height: 350px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    padding: 0 30px;
+}
+
+.scrollbar .receptencontainer {
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.scrollbar .recept {
+    width: 320px;
+    height: 260px;
+    border-radius: 0;
+}
+
+.weekrecept {
+    width: fit-content;
+    height: fit-content;
+}
+
+.weekrecept h2 {
+    background: none;
+    color:#590312;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0
+}
+
+.scrollgradientleft {
+    margin-left: -30px;
+    position: absolute;
+    background-image: linear-gradient(to left, #ffdeb800, #ffdeb8);
+    width: 30px;
+    height: 335px;
+    z-index: 10;
+}
+
+.scrollgradientright {
+    position: absolute;
+    background-image: linear-gradient(to right, #ffdeb800, #ffdeb8);
+    width: 30px;
+    margin-left: calc(1250px - 30px - 30px);
+    height: 335px;
+    z-index: 10;
+}
+
+.videokaart {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.videokaart .receptafbeelding {
+    filter: brightness(0.9);
+    transition: filter 300ms ease, background-size 300ms ease;
+}
+
+.playbuttonbg {
+    z-index: 30;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color:#590312;
+    border-radius: 999px;
+    
+    transition: transform 300ms ease, background-color 300ms ease;
+}
+
+.playbutton {
+    z-index: 30;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color:#ffefd5;
+    
+    -webkit-mask: url("../images/play.svg") center/60% no-repeat;
+    mask: url("../images/play.svg") center/60% no-repeat;
+    
+    transition: transform 300ms ease, background-color 300ms ease;
+}
+
+/* ----- Hover effects ----- */
+.videokaart:hover .receptafbeelding {
+    background-size: 105% auto; /* licht inzoomen */
+}
+
+.videokaart:hover .playbutton {
+    transform: translate(-50%, -50%) scale(1.1); /* groter */
+    background-color: #ff6a49; /* optional: oranje tint bij hover */
+}
+
+.videokaart:hover .playbuttonbg {
+    transform: translate(-50%, -50%) scale(1.1); /* groter */
+    background-color:#ffefd5; /* optional: oranje tint bij hover */
 }
