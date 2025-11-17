@@ -86,7 +86,29 @@ footer {
 }
 
 /* lijn gemaakt met hulp van Copilot
-       "Maak een lijn links en rechts van h2.tussenkopje" */
+       "Maak een lijn links en rechts van h2.tussenkopje"
+    Antwoord:
+        Ik ga de CSS bijwerken: maak #populairegerechten full-viewport breedte en gebruik flex met pseudo-elementen (::before, ::after) die links en rechts de lijnen vullen; ik overschrijf specifieke globale h2-stijlen voor .section-title zodat de lijnen precies stoppen vóór en na de titel. Verwacht: veilige CSS-wijziging in vormgeving.css.
+
+        vormgeving.css
+        Klaar — ik heb CSS toegevoegd zodat er twee lijnen verschijnen: één van de linkerkant van het scherm tot net vóór de H2, en één vanaf net na de H2 naar de rechterkant.
+
+        Wat ik deed
+
+        #populairegerechten maakt nu gebruik van width:100vw en een flex-opzet zodat de pseudo-elementen (::before en ::after) de lijnen naar de viewport-ruiten randen vullen.
+        De pseudo-elementen fungeren als flex-items met flex:1, waardoor ze automatisch tot aan de titel groeien en stoppen.
+        .section-title (je H2) is overschreven zodat het geen achtergrond/padding heeft die de lijnen zou blokkeren; er is een kleine horizontale padding zodat er een korte afstand (gap) tussen tekst en lijn ontstaat.
+        Hoe te testen
+
+        Open index.html in een browser.
+        Scroll naar het onderdeel "POPULAIRE RECEPTEN" — je ziet links en rechts een horizontale lijn die stopt vóór en hervat ná de titel en eindigt bij de schermranden.
+        Pas de spatiëring aan via de margins op #populairegerechten::before / ::after (nu 1rem) of de padding van .section-title als je meer of minder ruimte wilt.
+        Opmerkingen & mogelijke aanpassingen
+
+        Omdat de sectie nu width: 100vw gebruikt maar nog in #container staat (die 70% breed is en gecentreerd), zorgt de CSS trick (left 50% + translateX(-50%)) dat de lijnen echt naar schermranden gaan terwijl de titel visueel nog in de container staat. Als je liever hebt dat de lijnen stoppen bij de container-randen in plaats van de schermranden, laat het weten — dan maak ik de lijnen container-breed in plaats van viewport-breed.
+        Wil je dat de lijnen een andere kleur/dikte of een geanimeerde entry (bijv. grow-in op load) krijgen? Dan voeg ik dat toe.
+        Als de global h2 regels nog elders gewicht geven, kunnen we de selectors specifieker maken of !important gebruiken, maar ik heb eerst gekozen voor een schone override.
+        Zeg even of dit precies is wat je bedoelde of dat ik de lijndikte, kleur of afstand tot de tekst moet aanpassen. */
 
 .tussenkopjecontainer::before,
 .tussenkopjecontainer::after {
@@ -129,7 +151,7 @@ footer {
     height: 800px;
 }
 
-a[href="#roti"] {
+#banner a {
     display: flex;
     height: 100%;
     width: 100%;
@@ -168,8 +190,6 @@ a[href="#roti"] {
     padding: 0px;
     width: 50px;
     height: 50px;
-    /* animatie gemaakt met hulp van Copilot
-       "Maak een kleuranimatie wanneer hover over #arrowbg" */
     transition: background-color 300ms ease;
 }
 
@@ -178,14 +198,14 @@ a[href="#roti"] {
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: #c9b7ac;
+    background-color:#ffefd5;
     -webkit-mask: url("../images/Arrow.png") no-repeat center/contain;
     mask: url("../images/Arrow.png") no-repeat center/contain;
 }
 
 #arrowbg:hover .arrow-icon {
     transition: background-color 300ms ease;
-    background-color: #ffffff;
+    background-color: #ffefd5;
 }
 
 #arrowbg:hover {
@@ -207,8 +227,6 @@ a[href="#roti"] {
     font-weight: bold;
     color: #590312;
     border-bottom: 2px solid transparent;
-    /* animatie gemaakt met hulp van Copilot
-       "Maak een bottom border animatie voor wanneer ik over een list element hover" */
     transition: border-color 200ms ease;
 }
 
@@ -585,14 +603,16 @@ a:hover .recept {
 }
 
 .receptafbeeldinggroot {
-    float: right;
     width: 680px;
     height: 400px;
     background-size:cover;
+    box-shadow: 5px 10px 25px #4e0915;
+    border-radius: 15px;
+    border:solid #590312 5px;
 }
 
 .flexcontainer {
-    height: 2000px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -600,18 +620,18 @@ a:hover .recept {
 
 .linkercontainer {
     width: 310px;
-    height: 100%;
+    height: fit-content;
     margin-right: 60px;
 }
 
 .rechtercontainer {
     width: 680px;
-    height: 100%;
+    height: fit-content;
 }
 
 .recepttitel {
     font-size: 2.5rem;
-    margin-left: 150px;
+    margin-left: 160px;
     margin-top: 50px;
     margin-bottom: 25px;
 }
@@ -665,27 +685,155 @@ a:hover .recept {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-top: 250px;
+    margin-top: 220px;
     width: 100%;
     height: 750px;
 }
 
-.ingredientenlijst h2 {
+.hoofdtitel {
+    font-size: 35px;
     color:#590312;
     background: none;
-    margin: 0;
+    margin: 30px 0 15px 0;
     padding: 0
 }
 
 .ingredientenlijst li {
-    align-items: center;
-    list-style:square;
-    height: 25px;
+    padding: 5px;
+    display: flex;
+    list-style: none;
+    height: fit-content;
+    border-bottom: 3px dotted rgba(102, 21, 21, 0.5);
 }
 
 .ingredientenlijst p {
-    font-size: 18px;
+    font-size: 17.5px;
+    width: 260px;
 }
 
-/* https://www.fajalobi.nl/surinaamse-roti-kip-masala */
+.box {
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #590312;
+}
+
+ul.bereidingswijze li {
+    margin-bottom: 15px;
+    display: flex;
+    list-style: none;
+    height: fit-content;
+    font-size: 17.75px;
+    line-height: 1.9rem;
+}
+
+ul.bereidingswijze b {
+    color:#4e0915;
+    font-size: 21px;
+}
+
+.placeholder {
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 100%;
+    height: 450px;
+    background-color: #ffd5a2;
+    z-index: 0;
+    position: absolute;
+}
+
+.voorgrond {
+    position: relative;
+    z-index: 10
+}
+
+.bottom-margin-0 {
+    margin-bottom: 0;
+}
+
+.weekmenu {
+    padding: 30px 0;
+    height: fit-content;
+    width: 100%;
+    text-align: left;
+    line-height: 2rem;
+}
+
+.weekmenu h2 {
+    text-align: left;
+    width: 800px;
+    border-radius: 0;
+    background: none;
+    color:#590312;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.weekmenu p {
+    width: 800px;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+
+.weekmenu div {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(255, 223, 193);
+    padding: 5px 0;
+}
+
+.grootweekmenu {
+    padding: 0;
+    height: 600px;
+    background-size: cover;
+    width: 100%;
+    text-align:center;
+    background-color: #ffdeb8;
+    margin-bottom: 30px;
+}
+
+.grootweekmenu .scrollbar {
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+    height: 475px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    padding: 0 30px;
+}
+
+.grootweekmenu .scrollbar .recept {
+    width: 450px;
+    height: 375px;
+    border-radius: 0;
+}
+
+.grootweekmenu .scrollgradientleft {
+    margin-left: -30px;
+    position: absolute;
+    background-image: linear-gradient(to left, #ffdeb800, #ffdeb8);
+    width: 30px;
+    height: 445px;
+    z-index: 10;
+}
+
+.grootweekmenu .scrollgradientright {
+    position: absolute;
+    background-image: linear-gradient(to right, #ffdeb800, #ffdeb8);
+    width: 30px;
+    margin-left: calc(1250px - 30px - 30px);
+    height: 445px;
+    z-index: 10;
+}
 
