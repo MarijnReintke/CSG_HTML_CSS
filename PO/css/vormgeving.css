@@ -872,31 +872,48 @@ ul.bereidingswijze b {
 }
 
 #ontbijt {
-    background-image: url(../images/Loempia.jpg);
+    background-image: url(../images/Wittepuntjes.jpeg);
+    transform: scale(1.1);
 }
 
+.receptencontainer.overzicht a:hover #ontbijt {
+    transform: scale(1.15);
+}
+
+/* Masala ei, surinaamse bruine koek */
+
 #lunch {
-    background-image: url()
+    background-image: url(../images/lunch.png)
 }
 
 #avondeten {
-    background-image: url()
+    background-image: url(../images/avondeten.jpg);
+    transform: scale(1.35);
+}
+
+.receptencontainer.overzicht a:hover #avondeten {
+    transform: scale(1.4);
 }
 
 #voorgerechten {
-    background-image: url()
+    background-image: url(../images/voorgerecht.png);
+    transform: scale(1.5) translateY(-20px);
+}
+
+.receptencontainer.overzicht a:hover #voorgerechten {
+    transform: scale(1.55) translateY(-20px);
 }
 
 #bijgerechten {
-    background-image: url()
+    background-image: url(../images/Surinaamse-Bara.jpg)
 }
 
 #nagerechten {
-    background-image: url()
+    background-image: url(../images/javaans-surinaamse-kokosflensjes-goelong-goelong-1.jpg)
 }
 
 #tussendoortjes {
-    background-image: url()
+    background-image: url(../images/surinaamse-hapjes-voor-een-feestje-1.jpg)
 }
 
 .categorienaam {
